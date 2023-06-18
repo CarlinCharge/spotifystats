@@ -15,6 +15,12 @@ app.get('/', (req, res) => {
 app.get('/awesome-generator', (req, res) => {
   const { name, isAwesome } = req.query;
   res.send(`${name} is ${JSON.parse(isAwesome) ? 'really' : 'not'} awesome`);
+  console.log('Awesome route hit')
+});
+
+app.get('/nodemon-test', (req, res) => {
+   res.send('Nodemon works');
+  console.log('Nodemon route hit');
 });
 
 //  http://localhost:1234/awesome-generator?name=Carl&isAwesome=true provide the following query params 
