@@ -12,6 +12,14 @@ app.get('/', (req, res) => {
     res.json(data)
 });
 
+app.get('/awesome-generator', (req, res) => {
+  const { name, isAwesome } = req.query;
+  res.send(`${name} is ${JSON.parse(isAwesome) ? 'really' : 'not'} awesome`);
+});
+
+//  http://localhost:1234/awesome-generator?name=Carl&isAwesome=true provide the following query params 
+// We are destructuring here 
+
 const port = 1234;
 
 app.listen(port, ()=>{
