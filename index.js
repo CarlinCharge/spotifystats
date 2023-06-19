@@ -10,9 +10,12 @@ const REDIRECT_URI = process.env.REDIRECT_URI;
 
 // app.METHOD(path, HANDLER);
 
-app.get('/nodemon-test', (req, res) => {
-   res.send('Nodemon works');
-  console.log('Nodemon route hit');
+app.get('/', (req, res) =>{
+    res.send('Welcome to Spotify Stats!');
+});
+
+app.get('/login', (req, res)=>{
+    res.redirect(`https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${REDIRECT_URI}`);
 });
 
 
